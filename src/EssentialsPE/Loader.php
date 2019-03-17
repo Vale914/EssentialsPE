@@ -81,14 +81,7 @@ class Loader extends PluginBase{
     private $api;
     /** @var string */
     private const version = "0.0.4";
-
-	public function onLoad(): void{
-		// Before anything else...
-		$this->checkConfig();
-
-		UpdateNotifier::checkUpdate($this, $this->getDescription()->getName(), $this->getDescription()->getVersion());
-	}
-
+    
     public function onEnable(): void{
         // Custom API Setup :3
         $ev = new CreateAPIEvent($this, BaseAPI::class);
